@@ -12,7 +12,7 @@ provider "vsphere" {
 }
 
 data "vsphere_datacenter" "dc" {
-  name = "labs-denver"
+  name = "labs-denver-demo"
 }
 
 data "vsphere_datastore" "datastore" {
