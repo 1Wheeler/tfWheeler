@@ -3,7 +3,7 @@ variable "cloudUsername" {}
 variable "instanceName" {}
 
 provider "vsphere" {
-  user           = "administrator@vmware.bertramlabs.com"
+  user           = "${var.cloudUsername}"
   password       = "${var.cloudPassword}"
   vsphere_server = "10.30.21.180"
   version = "~> 1.3.0"
@@ -16,17 +16,17 @@ data "vsphere_datacenter" "dc" {
 }
 
 data "vsphere_datastore" "datastore" {
-  name          = "labs-demo-qnap-240"
+  name          = "vsanDatastore"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
 data "vsphere_resource_pool" "pool" {
-  name          = "labs-den-demo-cluster/Resources"
+  name          = "Demo-vSAN/Demo"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
 data "vsphere_network" "network" {
-  name          = "VM Network"
+  name          = "VLAN0002 - Internal Server"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
