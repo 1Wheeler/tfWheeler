@@ -1,6 +1,6 @@
 variable "cloudPassword" {}
 variable "cloudUsername" {}
-
+variable "instanceName" {}
 
 provider "vsphere" {
   user           = "${var.cloudUsername}"
@@ -36,7 +36,7 @@ data "vsphere_virtual_machine" "template" {
 }
 
 resource "vsphere_virtual_machine" "vm" {
-  name             = "${instance.name}"
+  name             = "${var.instanceName}"
   resource_pool_id = "${data.vsphere_resource_pool.pool.id}"
   datastore_id     = "${data.vsphere_datastore.datastore.id}"
 
