@@ -1,6 +1,6 @@
 variable "cloudPassword" {}
 variable "cloudUsername" {}
-variable "instanceName" {}
+
 
 provider "vsphere" {
   user           = "${var.cloudUsername}"
