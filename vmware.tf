@@ -67,6 +67,6 @@ resource "vsphere_virtual_machine" "vm" {
   connection {
     type     = "ssh"
     user     = "cloud-user"
-    password = "m0rp#3us!"
+    password = "m0rp#3us!!"
   }
 }
