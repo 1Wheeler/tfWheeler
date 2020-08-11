@@ -31,7 +31,7 @@ data "vsphere_network" "network" {
 }
 
 data "vsphere_virtual_machine" "template" {
-  name          = "Morpheus Ubuntu 16.04.6 v1"
+  name          = "Ubuntu 16.04.6 v1 noci"
   datacenter_id = "${data.vsphere_datacenter.dc.id}"
 }
 
