@@ -6,7 +6,7 @@ provider "vsphere" {
   user           = "${var.cloudUsername}"
   password       = "${var.cloudPassword}"
   vsphere_server = "10.30.21.180"
-  version = "~> 0.11.03"
+
   # if you have a self-signed cert
   allow_unverified_ssl = true
 }
