@@ -1,4 +1,4 @@
-6tvariable "cloudPassword" {}
+variable "cloudPassword" {}
 variable "cloudUsername" {}
 variable "instanceName" {}
 
