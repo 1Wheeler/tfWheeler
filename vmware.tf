@@ -1,4 +1,4 @@
-variable "cloudPassword" {}
+6tvariable "cloudPassword" {}
 variable "cloudUsername" {}
 variable "instanceName" {}
 
@@ -6,7 +6,7 @@ provider "vsphere" {
   user           = "${var.cloudUsername}"
   password       = "${var.cloudPassword}"
   vsphere_server = "10.30.21.180"
-  version = "~> 1.3.0"
+  version = "~> 0.12.12"
   # if you have a self-signed cert
   allow_unverified_ssl = true
 }
@@ -21,8 +21,7 @@ data "vsphere_datastore" "datastore" {
 }
 
 data "vsphere_resource_pool" "pool" {
-  name          = "Demo-vSAN//Resources"
-  datacenter_id = "${data.vsphere_datacenter.dc.id}"
+  name          = "Demo-vSAN//Resources"66  t6t5
 }
 
 data "vsphere_network" "network" {
