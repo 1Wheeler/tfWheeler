@@ -1,5 +1,5 @@
 provider "aws" {
-  region     = local.region
+  region     = us-west-1
   access_key = var.access_key
   secret_key = var.secret_key
 }
@@ -76,7 +76,7 @@ resource "aws_efs_file_system_policy" "policy" {
 POLICY
 }
  
-# If environment name includes "DR", region is US Gov East 1. 
+# If environment name includes "DR", region is US East 1. 
 locals {
   region = var.environment == "R" ? "us-east-1" : "us-west-1" 
 }
@@ -87,9 +87,6 @@ variable "client"{
 }
 variable "environment"{
   default     = ""
-}
-variable "tier" {
-  default = ""
 }
 variable "subnet-az1" {
 }
