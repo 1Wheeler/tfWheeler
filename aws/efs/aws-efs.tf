@@ -40,11 +40,6 @@ resource "aws_efs_mount_target" "az2" {
   subnet_id      = var.subnet-az2
 }
  
-resource "aws_efs_mount_target" "az3" {
-  count = length(var.subnet-az3) > 4 ? 1 : 0
-  file_system_id = "${aws_efs_file_system.efs.id}"
-  subnet_id      = var.subnet-az3
-}
 resource "aws_efs_file_system_policy" "policy" {
   file_system_id = "${aws_efs_file_system.efs.id}"
  
@@ -91,8 +86,6 @@ variable "environment"{
 variable "subnet-az1" {
 }
 variable "subnet-az2" {
-}
-variable "subnet-az3" {
 }
  
 variable "efs-name" {
